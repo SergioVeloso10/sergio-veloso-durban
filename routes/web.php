@@ -15,3 +15,6 @@ Route::get('/cliente', function () {
 //Route::get('/cliente',[ClienteController::class,'store'])->name('cliente');
 
 //Route::post('agregarCliente',[ClienteController::class, 'store'])->name('agregarCliente');
+Route::get('/login', function () {
+    return view('login');
+});

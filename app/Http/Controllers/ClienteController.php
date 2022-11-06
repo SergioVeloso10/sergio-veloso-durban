@@ -14,7 +14,10 @@ class ClienteController extends Controller
      */
     public function index()
     {
-
+        
+        $users = DB::select('select * from clientes');
+ 
+        return view('user.index', ['users' => $users]);
        
     }
 

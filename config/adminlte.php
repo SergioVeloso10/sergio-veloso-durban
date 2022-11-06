@@ -192,7 +192,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-dark-success elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -300,40 +300,34 @@ return [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
-        [
-            'type'         => '',
-            'text'         => 'Login',
-            'topnav_right' => true,
-        ],
 
         // Sidebar items:
         [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
+            'text'        => 'Carrito',
+            'url'         => 'venta',
+            'icon'        => 'fas fa-shopping-cart',
+            'label'       => 0,
             'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
+
+        ['header' => 'Infomacion Cliente'],
         [
             'text' => 'Usuario',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'text' => 'Mis Compras',
+            'url'  => '',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        [
+            'text' => 'Registrarse',
+            'url'  => '',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
+
+         /*
         [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
@@ -372,19 +366,20 @@ return [
                 ],
             ],
         ],
-        ['header' => 'labels'],
+        */
+        ['header' => 'Datos Cliente'],
         [
-            'text'       => 'important',
+            'text'       => 'Rut',
             'icon_color' => 'red',
             'url'        => '#',
         ],
         [
-            'text'       => 'warning',
+            'text'       => 'Razon social',
             'icon_color' => 'yellow',
             'url'        => '#',
         ],
         [
-            'text'       => 'information',
+            'text'       => 'Giro',
             'icon_color' => 'cyan',
             'url'        => '#',
         ],

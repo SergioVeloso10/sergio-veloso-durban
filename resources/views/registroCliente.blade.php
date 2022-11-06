@@ -11,8 +11,8 @@
         @csrf
         {{-- Email field --}}
         <div class="input-group mb-3">
-            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
-                   value="" placeholder="" autofocus>
+            <input type="text" name="rut" class="form-control @error('rut') is-invalid @enderror"
+                   value="" placeholder="Rut" autofocus>
 
             <div class="input-group-append">
                 <div class="input-group-text">
@@ -20,7 +20,43 @@
                 </div>
             </div>
 
-            @error('email')
+            @error('rut')
+                <span class="invalid-feedback" role="alert">
+                    <strong>Error</strong>
+                </span>
+            @enderror
+        </div>
+        {{-- razon social --}}
+        <div class="input-group mb-3">
+            <input type="text" name="razonsocial" class="form-control @error('razonsocial') is-invalid @enderror"
+                   value="" placeholder="Razon Social" autofocus>
+
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                </div>
+            </div>
+
+            @error('razonsocial')
+                <span class="invalid-feedback" role="alert">
+                    <strong>Error</strong>
+                </span>
+            @enderror
+        </div>
+
+        {{-- giro --}}
+
+        <div class="input-group mb-3">
+            <input type="text" name="giro" class="form-control @error('giro') is-invalid @enderror"
+                   value="" placeholder="Giro" autofocus>
+
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                </div>
+            </div>
+
+            @error('giro')
                 <span class="invalid-feedback" role="alert">
                     <strong>Error</strong>
                 </span>
@@ -29,7 +65,7 @@
 
         {{-- Password field --}}
         <div class="input-group mb-3">
-            <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
+            <input type="password" name="contrasena" class="form-control @error('contrasena') is-invalid @enderror"
                    placeholder="">
 
             <div class="input-group-append">
@@ -58,20 +94,17 @@
             </div>
 
             <div class="col-5">
-                <button type="button" class="btn btn-block" onclick="window.location='{{ url("home") }}'">
+                <button type=submit class="btn btn-block">
                     <span class="fas fa-sign-in-alt"></span>
                     {{ __('adminlte::adminlte.sign_in') }}
                 </button>
             </div>
-
-            <div class="col-5">
-                <button type="button" class="btn btn-block" onclick="window.location='{{ url("registrar") }}'">
-                    <span class="fas fa-sign-in-alt"></span>No tengo una cuenta
-                </button>
-            </div>
-
-          
+  
         </div>
 
+        
     </form>
+    <div class="col-5">
+        <a class="text-light font-weight-bold text-decoration-none">Ya tengo una cuenta</a>
+    </div>
 @stop

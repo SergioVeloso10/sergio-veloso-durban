@@ -4,17 +4,28 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
 
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('home');
 });
 
+// rutas de cliente Usuario
 Route::get('/cliente', function () {
     return view('cliente');
 });
 
-//Route::get('/cliente',[ClienteController::class,'store'])->name('cliente');
+Route::post('/agregarusuario',[ClienteController::class, 'agregar'])->name('agregarusuario');
 
-//Route::post('agregarCliente',[ClienteController::class, 'store'])->name('agregarCliente');
 Route::get('/login', function () {
     return view('login');
 });
+
+Route::get('/registrar', function () {
+    return view('registroCliente');
+});
+
+//rutas de venta
+Route::get('/venta', function () {
+    return view('venta');
+});
+
+Route::get('/ventaproducto/{idproductos}/{idcliente}',[ClienteController::class, 'ventaproducto']);

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+
 class ClienteController extends Controller
 {
     /**
@@ -14,11 +15,14 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        
-        $users = DB::select('select * from clientes');
- 
-        return view('user.index', ['users' => $users]);
+
        
+    }
+
+    public function ventaproducto($idProducto, $idCliente)
+    {
+        // insertar datos en venta. 
+        return view('venta');
     }
 
     /**

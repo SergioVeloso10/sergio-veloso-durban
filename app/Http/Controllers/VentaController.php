@@ -3,21 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-
-class ClienteController extends Controller
+class VentaController extends Controller
 {
+    public function ventaproducto($idProducto, $idCliente)
+    {
+        return redirect('venta');
+    }
+    public function index()
+    {
+        //
+    }
+
     /**
-     * Display a listing of the resource.
+     * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-     
-    }
-
     public function create()
     {
         //
@@ -31,9 +33,7 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        $datosCliente = request()->all();
-        $var = $request->nombre; 
-        return $var;
+        //
     }
 
     /**

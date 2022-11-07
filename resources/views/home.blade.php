@@ -6,6 +6,7 @@
 
 @section('seccion')
 <?php
+    //nos conectamos a la base y hacemos las consultas
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -27,6 +28,7 @@
     $idCliente = 2;  
 ?>
 
+{{-- tabla que muestra todos los productos --}}
 <table class="table table-striped table-bordered mt-2 p-3 bg-light">
     <thead class="bg-success text-white">
         <tr>
@@ -48,9 +50,8 @@
             <td><?php echo $producto['precio'] ?></td>
             <td>0</td>
             <td>
-                <a href={{url('ventaproducto',[$producto['idproductos']],$idCliente)}} class="btn btn-primary">Comprar</a>
-            </td>
-         
+                <a href="detalle/<?=$producto['idproductos']?>" class="btn btn-primary">Ver Producto</a>
+            </td>     
         </tr>
         <?php
             }

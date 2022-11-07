@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\VentaController;
+use App\Http\Controllers\ProductoController;
 
 
 Route::get('/home', function () {
@@ -13,7 +15,7 @@ Route::get('/cliente', function () {
     return view('cliente');
 });
 
-Route::post('/agregarusuario',[ClienteController::class, 'agregar'])->name('agregarusuario');
+//Route::post('/agregarusuario',[ClienteController::class, 'agregar'])->name('agregarusuario');
 
 Route::get('/login', function () {
     return view('login');
@@ -28,4 +30,8 @@ Route::get('/venta', function () {
     return view('venta');
 });
 
-Route::get('/ventaproducto/{idproductos}/{idcliente}',[ClienteController::class, 'ventaproducto']);
+//Route::get('/ventaproducto/{idproductos}/{idcliente}',[VentaController::class, 'ventaproducto']);
+
+
+// rutas producto
+Route::get('/detalle/{idproductos}',[ProductoController::class, 'detalle']);

@@ -6,17 +6,8 @@
 
 @section('seccion')
 <?php
-    //nos conectamos a la base y hacemos las consultas
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "mydb";
-
-    $coneccion = new mysqli($servername, $username, $password, $dbname);
-    if ($coneccion->connect_error) {
-        die("Connection failed: " . $coneccion->connect_error);
-    }
-                    
+    //nos conectamos a la base y hacemos las consulta
+    $coneccion = connection();                
     $sql = "SELECT * FROM productos";
     $consulta = mysqli_query($coneccion, $sql);
     

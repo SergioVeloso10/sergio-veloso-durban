@@ -10,51 +10,23 @@ use Illuminate\Support\Facades\DB;
 
 class ProductoController extends Controller
 {
-
-    public function detalle($idProducto){
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "mydb";
-
-        $coneccion = new mysqli($servername, $username, $password, $dbname);
-        if ($coneccion->connect_error) {
-            die("Connection failed: " . $coneccion->connect_error);
-        }
-
-        $sql = "SELECT * FROM productos";
+    public function detalle($idProducto)
+    {
+        $coneccion = connection();
+        $sql = "SELECT * FROM productos where idproductos = " . $idProducto;
         $consulta = mysqli_query($coneccion, $sql);
+        $fila = $consulta->fetch_assoc();
+        $nombreproducto = $fila['nombre'];
+        $precioproducto = $fila['precio'];
+        $idproducto = $fila['idproductos'];
 
-        while( $aux = mysqli_fetch_array($consulta)){
-            $idproducto = $aux['idproductos'];
-            $nombreproducto = $aux['nombre'];
-            $precioproducto = $aux['precio'];
-
-            if(strtoupper($idproducto) == strtoupper($idProducto)){
-                $check = true;
-                session_start();
-                $_SESSION["idProducto"]= $idproducto;
-                $_SESSION["nombreproducto"]= $nombreproducto;
-                $_SESSION["precioproducto"]= $precioproducto;
-                break;
-            }else{
-                $check = false;
-            }
-        }
-        // podriamos retornar un mensaje diciendo que no esta el producto
-        return view('detalleProducto');
+        return view("detalleProducto")->with('data', $fila);
     }
 
     public function index()
     {
         //
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //

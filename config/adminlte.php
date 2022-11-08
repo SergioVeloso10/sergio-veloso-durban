@@ -309,7 +309,7 @@ return [
             'label_color' => 'success',
         ],
 
-        ['header' => 'Infomacion Cliente'],
+        ['header' => 'Menu Navegacion'],
         [
             'text' => 'Usuario',
             'url'  => 'login',
@@ -318,75 +318,76 @@ return [
         [
             'text' => 'Productos',
             'url'  => 'home',
-            'icon' => 'fas fa-fw fa-basket-shopping',
+            'icon' => 'fas fa-truck',
         ],
         [
             'text' => 'Mis Compras',
-            'url'  => '',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text' => 'Registrarse',
-            'url'  => '',
+            'url'  => 'compra',
             'icon' => 'fas fa-fw fa-lock',
         ],
 
-         /*
+        ['header' => 'Productos Admin'],
+         
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
+            'text'    => 'CRUD ',
+            'icon'    => 'fas fa-fw',
             'submenu' => [
                 [
-                    'text' => 'level_one',
+                    'text' => 'Crear Producto',
                     'url'  => '#',
+                    'icon_color' => 'cyan',
                 ],
                 [
-                    'text'    => 'level_one',
+                    'text'    => 'Editar Producto',
                     'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
+                    'icon_color' => 'green',
                 ],
+                //     'submenu' => [
+                //         [
+                //             'text' => 'level_two',
+                //             'url'  => '#',
+                //         ],
+                //         [
+                //             'text'    => 'level_two',
+                //             'url'     => '#',
+                //             'submenu' => [
+                //                 [
+                //                     'text' => 'level_three',
+                //                     'url'  => '#',
+                //                 ],
+                //                 [
+                //                     'text' => 'level_three',
+                //                     'url'  => '#',
+                //                 ],
+                //             ],
+                //         ],
+                //     ],
+                // ],
                 [
-                    'text' => 'level_one',
+                    'text' => 'Eliminar Producto',
                     'url'  => '#',
+                    'icon_color' => 'red',
+                    
                 ],
             ],
         ],
-        */
-        ['header' => 'Datos Cliente'],
-        [
-            'text'       => 'Rut',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'Razon social',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'Giro',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+        
+        // ['header' => 'Datos Cliente'],
+        // [
+        //     'text'       => 'Rut',
+        //     'icon_color' => 'red',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'       => 'Razon social',
+        //     'icon_color' => 'yellow',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'       => 'Giro',
+        //     'icon_color' => 'cyan',
+        //     'url'        => '#',
+        // ],
     ],
 
     /*

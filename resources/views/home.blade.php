@@ -7,16 +7,11 @@
 @section('seccion')
 <?php
     //nos conectamos a la base y hacemos las consulta
+    //deberia ser desde controlador
     $coneccion = connection();                
     $sql = "SELECT * FROM productos";
     $consulta = mysqli_query($coneccion, $sql);
-    
-    // consultamos con datos que vendrian del login 
-    $rutGuardado= "191223047"; 
-    $sqlUsuario= "SELECT * FROM clientes WHERE rutCliente = '$rutGuardado'";
-    $consulta2 = mysqli_query($coneccion, $sqlUsuario);
-    // usamos una id inventada
-    $idCliente = 2;  
+    //consultamos con datos que vendrian del login   
 ?>
 
 {{-- tabla que muestra todos los productos --}}

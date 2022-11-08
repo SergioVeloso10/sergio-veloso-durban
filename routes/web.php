@@ -26,10 +26,20 @@ Route::get('/registrar', function () {
     return view('registroCliente');
 });
 
-//rutas de venta
+//rutas de venta y Carrito
 Route::get('/venta', function () {
     return view('venta');
 });
+
+Route::get('/compra', function () {
+    return view('compras');
+});
+
+Route::get('/prueba', function () {
+    return view('prueba');
+});
+
+Route::get('/efectuarCompra/{carrito}/{tipoDocumento}',[VentaController::class,'comprar']);
 
 Route::get('/venta/{idproductos}/{cantidad}',[CartController::class, 'add']);
 

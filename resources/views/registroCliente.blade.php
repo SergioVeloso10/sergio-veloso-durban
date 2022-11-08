@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
 @stop
 
-@section('auth_header', __('Iniciar Sesion'))
+@section('auth_header', __('Registrarse'))
 
 @section('auth_body')
     <form action="" method="post">
@@ -80,29 +80,18 @@
                 </span>
             @enderror
         </div>
-
         {{-- Login field --}}
         <div class="row">
-            <div class="col-7">
-                <div class="icheck-primary" title="">
-                    <input type="checkbox" name="remember" id="remember">
 
-                    <label for="remember">
-                        {{ __('adminlte::adminlte.remember_me') }}
-                    </label>
-                </div>
-            </div>
-
-            <div class="col-5">
+            <div class="col-12">
                 <button type=submit class="btn btn-block">
                     <span class="fas fa-sign-in-alt"></span>
-                    {{ __('adminlte::adminlte.sign_in') }}
+                    <a href="home" class="btn">Registrar</a>
                 </button>
             </div>
   
         </div>
 
-        
     </form>
     <div class="col-5">
         <a class="text-light font-weight-bold text-decoration-none">Ya tengo una cuenta</a>

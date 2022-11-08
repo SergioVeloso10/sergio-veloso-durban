@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => '',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -317,7 +317,7 @@ return [
         ],
         [
             'text' => 'Productos',
-            'url'  => 'home',
+            'url'  => '',
             'icon' => 'fas fa-truck',
         ],
         [
@@ -334,12 +334,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'Crear Producto',
-                    'url'  => '#',
+                    'url'  => 'crearProducto',
                     'icon_color' => 'cyan',
                 ],
                 [
-                    'text'    => 'Editar Producto',
-                    'url'     => '#',
+                    'text'    => 'Administrar Productos',
+                    'url'     => 'indexProductoAdmin',
                     'icon_color' => 'green',
                 ],
                 //     'submenu' => [
@@ -363,12 +363,12 @@ return [
                 //         ],
                 //     ],
                 // ],
-                [
-                    'text' => 'Eliminar Producto',
-                    'url'  => '#',
-                    'icon_color' => 'red',
+                // [
+                //     'text' => 'Eliminar Producto',
+                //     'url'  => '#',
+                //     'icon_color' => 'red',
                     
-                ],
+                // ],
             ],
         ],
         

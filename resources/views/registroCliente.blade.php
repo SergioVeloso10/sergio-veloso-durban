@@ -86,7 +86,7 @@
             <div class="col-12">
                 <button type=submit class="btn btn-block">
                     <span class="fas fa-sign-in-alt"></span>
-                    <a href="home" class="btn">Registrar</a>
+                    <a href="" class="btn">Registrar</a>
                 </button>
             </div>
   

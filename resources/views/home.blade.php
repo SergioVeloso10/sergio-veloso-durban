@@ -5,14 +5,6 @@
 @endsection
 
 @section('seccion')
-<?php
-    //nos conectamos a la base y hacemos las consulta
-    //deberia ser desde controlador
-    $coneccion = connection();                
-    $sql = "SELECT * FROM productos";
-    $consulta = mysqli_query($coneccion, $sql);
-    //consultamos con datos que vendrian del login   
-?>
 
 {{-- tabla que muestra todos los productos --}}
 <table class="table table-striped table-bordered mt-2 p-3 bg-light">
@@ -41,5 +33,4 @@
         ?>
     </tbody>
 </table>
-
 @endsection

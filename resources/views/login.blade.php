@@ -58,7 +58,7 @@
             </div>
 
             <div class="col-5">
-                <button type="button" class="btn btn-block" onclick="window.location='{{ url("home") }}'">
+                <button type="button" class="btn btn-block" onclick="window.location='{{ url("") }}'">
                     <span class="fas fa-sign-in-alt"></span>
                     {{ __('adminlte::adminlte.sign_in') }}
                 </button>

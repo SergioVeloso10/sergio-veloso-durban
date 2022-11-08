@@ -313,7 +313,7 @@ return [
         ['header' => 'Infomacion Cliente'],
         [
             'text' => 'Usuario',
-            'url'  => 'admin/settings',
+            'url'  => 'login',
             'icon' => 'fas fa-fw fa-user',
         ],
         [

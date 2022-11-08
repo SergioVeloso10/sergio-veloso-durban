@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 use mysqli;
 use Illuminate\Support\Facades\DB;
 //use Session;
-
-
 class ProductoController extends Controller
 {
     public function detalle($idProducto)

@@ -10,6 +10,7 @@ class VentaController extends Controller
     {
         return redirect('venta');
     }
+    
     public function index()
     {
         //

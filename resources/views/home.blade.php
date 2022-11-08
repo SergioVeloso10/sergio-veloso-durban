@@ -23,10 +23,8 @@
 <table class="table table-striped table-bordered mt-2 p-3 bg-light">
     <thead class="bg-success text-white">
         <tr>
-            <th>Numero de serie</th>
             <th>Nombre</th>
             <th>Precio</th>
-            <th>Cantidad</th>
             <th>Opciones</th>
         </tr>
     </thead>
@@ -36,12 +34,11 @@
         ?>
         
         <tr>
-            <td><?php echo $producto['nserie'] ?></td>
             <td><?php echo $producto['nombre'] ?></td>
             <td><?php echo $producto['precio'] ?></td>
-            <td>0</td>
             <td>
                 <a href="detalle/<?=$producto['idproductos']?>" class="btn btn-primary">Ver Producto</a>
+                <a href="#" class="btn btn-primary">+<i class="fas fa-shopping-cart"></i></a>
             </td>     
         </tr>
         <?php

@@ -13,6 +13,6 @@
 <br>
 
 <a href="{{ url()->previous() }}" class="btn btn-primary">Regresar</a>
-<a href="#" class="btn btn-primary">+<i class="fas fa-shopping-cart"></i></a>
+<a href="/venta/<?=$data['idproductos']?>/1" class="btn btn-primary">+<i class="fas fa-shopping-cart"></i></a>
 
 @endsection

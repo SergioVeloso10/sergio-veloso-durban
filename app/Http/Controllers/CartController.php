@@ -3,19 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Cart; 
 
-class VentaController extends Controller
+
+class CartController extends Controller
 {
-    public function ventaproducto($idProducto, $idCliente)
-    {
-        return redirect('venta');
-    }
-
-    public function carrito()
-    {
-        
-    }
-
+   
     public function index()
     {
         //
@@ -37,17 +30,22 @@ class VentaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function add($idProducto,$cantidad)
     {
-        //
+        $coneccion = connection();
+        $sql = "SELECT * FROM productos where idproductos = " . $idProducto;
+        $consulta = mysqli_query($coneccion, $sql);
+        $fila = $consulta->fetch_assoc();
+
+        Cart::add(
+            $fila['idproductos'], 
+            $fila['nombre'], 
+            $fila['precio'], 
+            $cantidad,
+        );
+        return back()->with('success',$fila['nombre'],"$ ¡se ha agregado con éxito al carrito!");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
@@ -76,14 +74,11 @@ class VentaController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function removeitem($idproducto) {
+        //$producto = Producto::where('id', $request->id)->firstOrFail();
+        Cart::remove([
+        'id' => $idproducto,
+        ]);
+        return back()->with('success',"Producto eliminado con éxito de su carrito.");
     }
 }

@@ -38,7 +38,7 @@
             <td><?php echo $producto['precio'] ?></td>
             <td>
                 <a href="detalle/<?=$producto['idproductos']?>" class="btn btn-primary">Ver Producto</a>
-                <a href="#" class="btn btn-primary">+<i class="fas fa-shopping-cart"></i></a>
+                <a href="/venta/<?=$producto['idproductos']?>/1" class="btn btn-primary">+<i class="fas fa-shopping-cart"></i></a>
             </td>     
         </tr>
         <?php

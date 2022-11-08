@@ -306,7 +306,6 @@ return [
             'text'        => 'Carrito',
             'url'         => 'venta',
             'icon'        => 'fas fa-shopping-cart',
-            'label'       => 0,
             'label_color' => 'success',
         ],
 
@@ -315,6 +314,11 @@ return [
             'text' => 'Usuario',
             'url'  => 'login',
             'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Productos',
+            'url'  => 'home',
+            'icon' => 'fas fa-fw fa-basket-shopping',
         ],
         [
             'text' => 'Mis Compras',

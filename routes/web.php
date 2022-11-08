@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\VentaController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\CartController; 
 
 
 Route::get('/home', function () {
@@ -30,6 +31,9 @@ Route::get('/venta', function () {
     return view('venta');
 });
 
+Route::get('/venta/{idproductos}/{cantidad}',[CartController::class, 'add']);
+
+Route::get('/eliminardelcarrito/{idproductos}',[CartController::class,'removeitem']);
 //Route::get('/ventaproducto/{idproductos}/{idcliente}',[VentaController::class, 'ventaproducto']);
 
 

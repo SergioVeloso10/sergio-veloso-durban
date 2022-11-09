@@ -1,1 +1,2 @@
-aca se deberia realizar el insert en detalle venta. 
+{{json_encode($data)}} 
+{{$tipo}} 

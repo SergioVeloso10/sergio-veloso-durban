@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\VentaController;
 use App\Http\Controllers\ProductoController;
-use App\Http\Controllers\CartController; 
+use App\Http\Controllers\CartController;  
 
 // rutas de cliente Usuario
 Route::get('/cliente', function () {    // muestra datos del cliente
@@ -31,6 +31,8 @@ Route::get('/compra', function () {   // muestra lo que ha comprado el cliente
 Route::get('/prueba', function () {
     return view('prueba');
 });
+
+Route::post('/comprarProducto',[VentaController::class, 'comprar'])->name('comprarProducto');
 
 Route::get('/efectuarCompra/{carrito}/{tipoDocumento}',[VentaController::class,'comprar']); // se efectuaria la compra y boleta
 

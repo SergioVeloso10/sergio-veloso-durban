@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 
 class VentaController extends Controller
 {
-    public function comprar($carrito, $tipoDocumento)
-    {  
-        $coneccion = connection();
+    public function comprar(Request $request)
+    {   
         
-        return view('prueba');
-        
-        // $sql = "SELECT * FROM productos where idproductos = " . $idProducto;
-        // $consulta = mysqli_query($coneccion, $sql);
-        //return redirect('home');
+        $data = json_decode($request->data); 
+        $tipo = $request->select; 
+
+
+
+        return view('prueba',compact('data','tipo'));
     }
 }

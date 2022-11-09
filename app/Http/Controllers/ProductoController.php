@@ -21,6 +21,9 @@ class ProductoController extends Controller
         $coneccion = connection();                
         $sql = "SELECT * FROM productos";
         $consulta = mysqli_query($coneccion, $sql);
+        // hacemos sesion del usuario. 
+        
+
         return view('home', compact('consulta'));
     }
 

@@ -19,30 +19,30 @@
                     <tbody>
                         <?php 
                         $total = 0;
-                        $aux = array();
-                        $j = 0; 
+                        $aux=[];
                         ?>
                         @foreach (Cart::getContent() as $item)
                             <tr>
                                 <td>{{$item->id}}</td>
                                 <?php 
-                                $aux[$j] = $item->id;
-                                $j = $j+1; 
+                                $data=new stdClass();
+                                $data->id = $item->id; 
+                                
                                 ?>
                                 <td>{{$item->name}}</td>
                                 <?php 
-                                $aux[$j] = $item->name;
-                                $j = $j+1; 
+                                $data->nombre = $item->name;
+                                
                                 ?>
                                 <td>{{$item->price}}</td>
                                 <?php 
-                                $aux[$j] = $item->price;
-                                $j = $j+1; 
+                                $data->precio = $item->price;
+                              
                                 ?>
                                 <td>{{$item->quantity}}</td>
                                 <?php 
-                                $aux[$j] = $item->quantity;
-                                $j = $j+1; 
+                                $data->cantidad = $item->quantity;
+                                array_push($aux,$data); 
                                 ?>
                                 <td>
                                     <a href="eliminardelcarrito/<?=$item->id?>" class="btn btn-danger">Eliminar</a>
@@ -55,18 +55,21 @@
                     </tbody>
                 </table>
             <div>
+                
                 <p> Total a pagar: $ {{$total}} </p>
-                <p> Tipo de documento : 
+                <br><br>
+                <?php $idCliente=1; ?> 
+                <form action={{route('comprarProducto')}} method="POST">
+                    @csrf
+                    <label> Tipo de documento : </label>
                     <select name="select" class="custom-select" style="width:200px;">
                         <option value="Boleta" id="boleta">Boleta</option>
                         <option value="Factura" id="factura">Factura</option>
-                     </select> 
-                </p>
-                
-                <br><br>
-                {{-- <a {{route("efectuarCompra.comprar",Cart::getContent(),"boleta")}} class="btn btn-success">Comprar</a> --}}
-                {{-- <a href="efectuarCompra/{{$aux}}/boleta" class="btn btn-primary">Comprar</a> --}}
-                <a href="efectuarCompra/4/boleta" class="btn btn-primary">Comprar</a>
+                    </select> 
+                    <input class="d-none" type="text" id="data" name="data" value="{{json_encode($aux)}}">
+                    <br><br><br>
+                    <input style="width:200px" class="btn btn-primary" type="submit" value="Comprar"/>
+                </form>   
             </div>
 
             @else

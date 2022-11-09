@@ -24,7 +24,7 @@
             <tr>
                 <td><?php echo $venta['idventa'] ?></td>
                 <td><?php echo $_SESSION["rut"] ?></td>
-                <td><?php echo $venta['tipos_documentos_idtipos_documentos'] ?></td>
+                <td><?php echo $venta['tipo'] ?></td>
                 <td><?php echo $venta['fecha'] ?></td>
                 <td><?php echo $venta['folio'] ?></td>
                 <td>

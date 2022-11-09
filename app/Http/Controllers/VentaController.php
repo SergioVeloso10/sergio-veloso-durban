@@ -50,7 +50,7 @@ class VentaController extends Controller
             mysqli_query($coneccion, $sql);
             $coneccion->close();
         } 
-
+        
         return redirect()->action(
             [ProductoController::class, 'index']
         ); 
@@ -62,7 +62,9 @@ class VentaController extends Controller
         //recuperamos la id del cliente con la sesion 
         $idCliente = $_SESSION["id"];
         //hacemos la consulta para encontrar las compras que hizo el cliente. 
-        $sql = "SELECT * FROM venta WHERE clientes_idclientes = " . $idCliente;
+        $sql = "SELECT * FROM venta v 
+        JOIN tipos_documentos td ON v.tipos_documentos_idtipos_documentos = td.idtipos_documentos
+        WHERE clientes_idclientes = " . $idCliente;
         $consulta = mysqli_query($coneccion, $sql);
         return view('compras', compact('consulta'));
     }

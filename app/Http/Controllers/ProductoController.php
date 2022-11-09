@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use mysqli;
 use Illuminate\Support\Facades\DB;
-//use Session;
+use Session;
+
 class ProductoController extends Controller
 {
     public function detalle($idProducto)
@@ -22,7 +23,12 @@ class ProductoController extends Controller
         $sql = "SELECT * FROM productos";
         $consulta = mysqli_query($coneccion, $sql);
         // hacemos sesion del usuario. 
-        
+        session_start();
+        $_SESSION["id"] = 1;
+        $_SESSION["rut"] = "54.896.458-k";
+        $_SESSION["giro"] = "Venta";
+        $_SESSION["razon"] = "Libreria Giorgio";
+        $_SESSION["estado"] = "A";
 
         return view('home', compact('consulta'));
     }
@@ -42,7 +48,7 @@ class ProductoController extends Controller
         $coneccion = connection(); 
         $sql = "UPDATE productos SET nombre='$request->nombre',sku='$request->sku',
         nserie = '$request->numSerie', precio = '$request->precio', estado = '$request->estado' 
-        where idproductos = " . $idproducto;
+        WHERE idproductos = " . $idproducto;
         mysqli_query($coneccion, $sql);
         $coneccion->close();
         return redirect('indexProductoAdmin'); 

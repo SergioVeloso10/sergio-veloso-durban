@@ -62,16 +62,16 @@
                 <form action={{route('comprarProducto')}} method="POST">
                     @csrf
                     <label> Tipo de documento : </label>
-                    <select name="select" class="custom-select" style="width:200px;">
-                        <option value="Boleta" id="boleta">Boleta</option>
-                        <option value="Factura" id="factura">Factura</option>
+                    <select name="select" id="select" class="custom-select" style="width:200px;">
+                        <option value="1">Boleta</option>
+                        <option value="2">Factura</option>
                     </select> 
                     <input class="d-none" type="text" id="data" name="data" value="{{json_encode($aux)}}">
                     <br><br><br>
                     <input style="width:200px" class="btn btn-primary" type="submit" value="Comprar"/>
                 </form>   
             </div>
-
+            
             @else
                 <p>Carrito vacio</p>
            @endif

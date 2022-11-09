@@ -24,9 +24,7 @@ Route::get('/venta', function () {    // muestra el carrito con los productos se
     return view('venta');
 });
 
-Route::get('/compra', function () {   // muestra lo que ha comprado el cliente
-    return view('compras');
-});
+Route::get('/misCompras',[VentaController::class,'verCompras'])->name('misCompras');
 
 Route::get('/prueba', function () {
     return view('prueba');

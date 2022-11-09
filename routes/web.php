@@ -29,10 +29,6 @@ Route::get('/movimientos',[VentaController::class,'verMovimientos'])->name('movi
 
 Route::get('/misCompras',[VentaController::class,'verCompras'])->name('misCompras'); // cliente ve las compras que ha realizado
 
-Route::get('/prueba', function () {
-    return view('prueba');
-});
-
 Route::post('/comprarProducto',[VentaController::class, 'comprar'])->name('comprarProducto');
 
 Route::get('/efectuarCompra/{carrito}/{tipoDocumento}',[VentaController::class,'comprar']); // se efectuaria la compra y boleta

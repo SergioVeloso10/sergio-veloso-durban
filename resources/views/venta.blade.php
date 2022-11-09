@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('titulo')
-<h1>Carrito de Compra</h1>
+<h1 class="font-weight-bold mb-4">Carrito de Compra</h1>
 @endsection
 @section('seccion')
 <p> 
@@ -55,8 +55,8 @@
                     </tbody>
                 </table>
             <div>
-                
-                <p> Total a pagar: $ {{$total}} </p>
+                <br>
+                <h3 class="font-weight-bold mb-4"> Total a pagar: $ {{$total}} </h3>
                 <br><br>
                 <?php $idCliente=1; ?> 
                 <form action={{route('comprarProducto')}} method="POST">

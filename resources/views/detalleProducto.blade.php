@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('titulo')
-<h1>Detalle de: {{$data['nombre']}}</h1>
+<h1 class="font-weight-bold mb-4">Detalle de: {{$data['nombre']}}</h1>
 @endsection
 @section('seccion')
 

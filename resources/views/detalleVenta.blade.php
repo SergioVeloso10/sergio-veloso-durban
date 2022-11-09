@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('titulo')
-<h1>Detalle de Venta</h1>
+<h1 class="font-weight-bold mb-4">Detalle de Venta</h1>
 @endsection
 @section('seccion')
 <?php  $total=0; ?>
@@ -11,8 +11,8 @@
             <tr>
                 <th>Fecha</th>
                 <th>Cantidad</th>
-                <th>Neto</th>
-                <th>Total</th>
+                <th>Neto (Unidad)</th>
+                <th>Total (Unidad)</th>
                 <th>Estado</th>
                 <th>Id venta</th>
                 <th>Producto</th>
@@ -40,9 +40,9 @@
 </div>
 <br><br>
 <div>
-    <h3> Valor neto $ {{$total * 0.81}} </h3>
+    <h3 class="font-weight-bold mb-4"> Valor neto $ {{$total * 0.81}} </h3>
         <br>
-    <h2> Valor total $ {{$total}} </h2>
+    <h2 class="font-weight-bold mb-4"> Valor total $ {{$total}} </h2>
 </div>
 
 <a href="{{ url()->previous() }}" class="btn btn-primary">Regresar</a>

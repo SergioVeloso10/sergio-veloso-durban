@@ -10,14 +10,16 @@ class ProductoController extends Controller
 {
     public function detalle($idProducto)
     {
+        // se puede ver el detalle del producto seleccionado
         $coneccion = connection();
         $sql = "SELECT * FROM productos where idproductos = " . $idProducto;
         $consulta = mysqli_query($coneccion, $sql);
-        $fila = $consulta->fetch_assoc();
+        $fila = $consulta->fetch_assoc();  
         return view("detalleProducto")->with('data', $fila);
     }
 
     public function index(){
+        //Se ven todos los productos para comprarlos.
         $coneccion = connection();                
         $sql = "SELECT * FROM productos";
         $consulta = mysqli_query($coneccion, $sql);
@@ -33,7 +35,7 @@ class ProductoController extends Controller
     }
 
     public function agregar(Request $request){
-        //coneccion con la base y hacemos la consulta. 
+        //coneccion con la base y hacemos el insert. 
         $coneccion = connection(); 
         $sql = "INSERT INTO productos(nombre,sku,nserie,precio,estado) VALUES 
         ('$request->nombre','$request->sku','$request->numSerie','$request->precio','$request->estado')";
@@ -44,6 +46,7 @@ class ProductoController extends Controller
     }
 
     public function editar(Request $request, $idproducto){ 
+        //editamos un producto, que viene identificado por la id. 
         $coneccion = connection(); 
         $sql = "UPDATE productos SET nombre='$request->nombre',sku='$request->sku',
         nserie = '$request->numSerie', precio = '$request->precio', estado = '$request->estado' 
@@ -54,10 +57,12 @@ class ProductoController extends Controller
     }
 
     public function create(){
+        //nos muestra el formulario de creacion de un producto. 
         return view('createProducto'); 
     }
 
     public function edit($idproducto){
+        //nos muestra un formulario para editar los campos del producto seleccionado. 
         $coneccion = connection(); 
         $sql = "SELECT * FROM productos where idproductos = " . $idproducto;
         $consulta = mysqli_query($coneccion, $sql);
@@ -66,6 +71,7 @@ class ProductoController extends Controller
     }
 
     public function indexAdmin(){
+        //muestra toda la informacion de los productos para el administrador, 
         $coneccion = connection();                
         $sql = "SELECT * FROM productos";
         $consulta = mysqli_query($coneccion, $sql);
@@ -73,6 +79,7 @@ class ProductoController extends Controller
     }
 
     public function delete($idproducto){
+        //elimina un producto seleccionado. 
         $coneccion = connection(); 
         $sql = "DELETE FROM productos WHERE idproductos =" . $idproducto; 
         $consulta = mysqli_query($coneccion,$sql);

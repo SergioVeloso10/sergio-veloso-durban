@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Cart; 
 
 class VentaController extends Controller
 {
@@ -36,7 +37,8 @@ class VentaController extends Controller
         foreach ($data as $item){
             $neto = $item->precio * 0.81; 
             $coneccion = connection();
-            $sql = "INSERT INTO detalleventa(fecha,cantidad,neto,subtotal,estado,venta_idventa,productos_idproductos) VALUES
+            $sql = "INSERT INTO detalleventa
+            (fecha,cantidad,neto,subtotal,estado,venta_idventa,productos_idproductos) VALUES
             ('$fecha','$item->cantidad','$neto','$item->precio','$estado','$idventa','$item->id')"; 
             mysqli_query($coneccion, $sql);
             $idDetalleVenta = $coneccion->insert_id; //recoje la id que inserto 
@@ -45,15 +47,19 @@ class VentaController extends Controller
             //insertamos datos en movimientos. 
 
             $coneccion = connection(); 
-            $sql = "INSERT INTO movimientos(fecha,detalleventa_iddetalleventa,detalleventa_venta_idventa, detalleventa_productos_idproductos)
+            $sql = "INSERT INTO movimientos
+            (fecha,detalleventa_iddetalleventa,detalleventa_venta_idventa, detalleventa_productos_idproductos)
             VALUES ('$fecha', '$idDetalleVenta','$idventa','$item->id')"; 
             mysqli_query($coneccion, $sql);
             $coneccion->close();
-        } 
-        
+        }
+        Cart::clear();
+
         return redirect()->action(
             [ProductoController::class, 'index']
         ); 
+
+        //aca se deberia eliminar las cosas del carrito. 
     }
 
     public function verCompras(){

@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('titulo')
-<h1>Ver movimientos</h1>
+<h1 class="font-weight-bold mb-4">Ver movimientos</h1>
 @endsection
 @section('seccion')
 

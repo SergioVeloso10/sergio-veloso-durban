@@ -28,7 +28,7 @@
                 <td><?php echo $venta['fecha'] ?></td>
                 <td><?php echo $venta['folio'] ?></td>
                 <td>
-                    <a href="#" class="btn btn-primary">Ver Detalle Venta</a>
+                    <a href="detalleVenta/{{$venta['idventa']}}" class="btn btn-primary">Ver Detalle Venta</a>
                 </td>     
             </tr>
             <?php

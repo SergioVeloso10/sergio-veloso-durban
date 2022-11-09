@@ -23,8 +23,11 @@ Route::get('/registrar', function () { // muestra formulario de registro
 Route::get('/venta', function () {    // muestra el carrito con los productos seleccionados
     return view('venta');
 });
+Route::get('/detalleVenta/{idventa}',[VentaController::class,'verDetalleVenta'])->name('detalleVenta/{idventa}');
 
-Route::get('/misCompras',[VentaController::class,'verCompras'])->name('misCompras');
+Route::get('/movimientos',[VentaController::class,'verMovimientos'])->name('movimientos');
+
+Route::get('/misCompras',[VentaController::class,'verCompras'])->name('misCompras'); // cliente ve las compras que ha realizado
 
 Route::get('/prueba', function () {
     return view('prueba');

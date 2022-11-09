@@ -326,7 +326,7 @@ return [
             'icon' => 'fas fa-fw fa-lock',
         ],
 
-        ['header' => 'Productos Admin'],
+        ['header' => 'Admin'],
          
         [
             'text'    => 'CRUD ',
@@ -342,6 +342,8 @@ return [
                     'url'     => 'indexProductoAdmin',
                     'icon_color' => 'green',
                 ],
+            ],
+
                 //     'submenu' => [
                 //         [
                 //             'text' => 'level_two',
@@ -369,26 +371,26 @@ return [
                 //     'icon_color' => 'red',
                     
                 // ],
-            ],
+            
         ],
         
-        // ['header' => 'Datos Cliente'],
-        // [
-        //     'text'       => 'Rut',
-        //     'icon_color' => 'red',
-        //     'url'        => '#',
-        // ],
-        // [
-        //     'text'       => 'Razon social',
-        //     'icon_color' => 'yellow',
-        //     'url'        => '#',
-        // ],
-        // [
-        //     'text'       => 'Giro',
-        //     'icon_color' => 'cyan',
-        //     'url'        => '#',
-        // ],
-    ],
+        // ['header' => 'Ver Movimientos Admin'],
+        [
+            'text'       => 'Movimientos',
+            'icon_color' => 'green',
+            'url'        => 'movimientos',
+        ],
+    //     [
+    //         'text'       => 'Razon social',
+    //         'icon_color' => 'yellow',
+    //         'url'        => '#',
+    //     ],
+    //     [
+    //         'text'       => 'Giro',
+    //         'icon_color' => 'cyan',
+    //         'url'        => '#',
+    //     ],
+     ],
 
     /*
     |--------------------------------------------------------------------------
